@@ -12,12 +12,38 @@ Algorithm:
 7.	Use the display function to visualize the stack's contents
  
 Program:
+```
+#include <stdio.h>
 
-//type your code here
+int main()
+{
+    int stack[100], top = -1;
+    int n, i;
+
+    printf("Enter number of elements: ");
+    scanf("%d", &n);
+
+    for(i = 0; i < n; i++)
+    {
+        scanf("%d", &stack[++top]);
+    }
+
+    printf("Stack elements are:\n");
+
+    for(i = top; i >= 0; i--)
+    {
+        printf("%d\n", stack[i]);
+    }
+
+    return 0;
+}
+
+```
 
 Output:
 
-//paste your output here
+<img width="555" height="237" alt="image" src="https://github.com/user-attachments/assets/36ba47bb-9d1d-436a-8508-9c9cd8f59478" />
+
 
 
 
@@ -36,11 +62,43 @@ Algorithm:
  
 Program:
 
-//type your code here
+```
+#include <stdio.h>
+
+int main()
+{
+    int stack[100], top = -1;
+    int n, i, element;
+
+    printf("Enter number of elements: ");
+    scanf("%d", &n);
+
+    for(i = 0; i < n; i++)
+    {
+        printf("Enter element: ");
+        scanf("%d", &stack[++top]);
+    }
+
+    printf("Enter element to push: ");
+    scanf("%d", &element);
+
+    top++;
+    stack[top] = element;
+
+    printf("Stack after PUSH:\n");
+
+    for(i = top; i >= 0; i--)
+    {
+        printf("%d\n", stack[i]);
+    }
+
+    return 0;
+}
+```
 
 Output:
 
-//paste your output here
+<img width="541" height="230" alt="image" src="https://github.com/user-attachments/assets/12998ffb-a06e-4468-82b5-801477bf3381" />
 
 
 
@@ -61,12 +119,38 @@ Algorithm:
 4.	Call the display function and perform other queue operations as needed.
  
 Program:
+```
 
-//type your code here
+#include <stdio.h>
 
+int main()
+{
+    int queue[100], front = 0, rear = -1;
+    int n, i;
+
+    printf("Enter number of elements: ");
+    scanf("%d", &n);
+
+    for(i = 0; i < n; i++)
+    {
+        scanf("%d", &queue[++rear]);
+    }
+
+    printf("Queue elements are:\n");
+
+    for(i = front; i <= rear; i++)
+    {
+        printf("%d ", queue[i]);
+    }
+
+    return 0;
+}
+
+```
 Output:
 
-//paste your output here
+<img width="491" height="171" alt="image" src="https://github.com/user-attachments/assets/3e7087c0-d044-4d6f-9149-f8a3a53f2c45" />
+
 
 
 Result:
@@ -86,11 +170,44 @@ Algorithm:
 
 Program:
 
-//type your code here
+```
+#include <stdio.h>
+
+int main()
+{
+    int queue[100], front = 0, rear = -1;
+    int n, i, element;
+
+    printf("Enter number of elements: ");
+    scanf("%d", &n);
+
+    for(i = 0; i < n; i++)
+    {
+        printf("Enter element: ");
+        scanf("%d", &queue[++rear]);
+    }
+
+    printf("Enter element to insert: ");
+    scanf("%d", &element);
+
+    rear++;
+    queue[rear] = element;
+
+    printf("Queue after insertion:\n");
+
+    for(i = front; i <= rear; i++)
+    {
+        printf("%d ", queue[i]);
+    }
+
+    return 0;
+}
+```
 
 Output:
 
-//paste your output here
+<img width="563" height="150" alt="image" src="https://github.com/user-attachments/assets/4b36823b-242b-47d4-b16c-54fef838587f" />
+
 
 Result:
 Thus, the program to insert elements in queue using array is verified successfully.
@@ -120,12 +237,26 @@ o	After deletion, check if the front pointer has passed the rear pointer (front 
 
 
 Program:
+```
 
-//type your code here
+void deleteElement(int queue[], int *front, int *rear)
+{
+    if(*front > *rear)
+    {
+        printf("Queue is empty");
+    }
+    else
+    {
+        printf("Deleted element = %d\n", queue[*front]);
+        (*front)++;
+    }
+}
+```
 
 Output:
 
-//paste your output here
+<img width="415" height="65" alt="image" src="https://github.com/user-attachments/assets/d89c9ea5-b84e-4e07-b09a-746530920187" />
+
 
 
 Result:
